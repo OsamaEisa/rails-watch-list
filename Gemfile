@@ -31,6 +31,11 @@ gem "jbuilder"
 gem 'rspec-rails', group: [ :test ]
 gem 'rails-controller-testing', group: [ :test ]
 
+gem "autoprefixer-rails"
+gem "font-awesome-sass", "~> 6.1"
+gem "simple_form", github: "heartcombo/simple_form"
+gem "sassc-rails"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
