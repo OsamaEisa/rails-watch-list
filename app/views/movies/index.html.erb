@@ -1,0 +1,25 @@
+<h1 class="text-center mt-3 mb-5">All Movies</h1>
+<div class="row">
+<% @movies.each do |movie| %>
+<div class="col-md-4">
+<div class="card mb-3">
+  <div class="card-body">
+    <h5 class="card-title"><%= movie.title %></h5>
+    <p class="card-text">
+      <strong>Description:</strong> <%= movie.overview %>
+    </p>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <strong>Price per night:</strong> <%= movie.rating %>
+      </li>
+      <li class="list-group-item">
+        <%= link_to "More info", movie_path(movie), class: "link-primary mt-2" %>
+        <%= link_to "Edit", edit_movie_path(movie), class: "link-warning mt-2" %>
+        <%= link_to "Delete", movie_path(movie), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "link-danger mt-2" %>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+<% end %>
+</div>

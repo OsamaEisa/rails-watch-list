@@ -1,0 +1,13 @@
+<h1 class="text-center mt-3 mb-5">All lists</h1>
+<div class="row">
+<% @lists.each do |list| %>
+  <div class="col-md-4">
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title"><%= link_to list.name, list_path(list) %> </h5>
+    </div><%# card body %>
+  </div> <%# card %>
+
+</div> <%# col %>
+<% end %>
+</div> <%# row %>
