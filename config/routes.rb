@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
   # # all lists
   # get 'lists', to: 'lists#index'
 
@@ -13,9 +12,10 @@ Rails.application.routes.draw do
   # # show a list
   # get 'lists/:id', to: 'lists#show'
 
-  resources :movies
+  # resources :movies
+  root to: 'lists#index'
 
-  resources :lists, only: %i[index new create show] do
+  resources :lists, only: %i[new create show] do
     resources :bookmarks, only: %i[new create]
   end
   resources :bookmarks, only: %i[destroy]
