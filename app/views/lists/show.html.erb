@@ -3,6 +3,7 @@
 <div class="card">
   <div class="card-body">
     <h5 class="card-title"><%= @list.name %></h5>
+    <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
     <p class="card-text">
 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci iusto debitis dolor. Expedita nulla modi a totam. Laudantium eos ratione aut consequuntur magnam voluptatum excepturi reiciendis delectus nemo, in voluptatem.
     </p>
@@ -17,6 +18,11 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci iusto debitis
         </div>
       </div>
   </div>
+</div>
+
+<div class="card-category"
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>')">
+  Cool article
 </div>
 
 <h3 class='text-center mt-2'>Create a new bookmark</h3>

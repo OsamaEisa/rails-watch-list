@@ -39,6 +39,8 @@ gem "sassc-rails"
 # dotenv gem for security
 gem "dotenv-rails", groups: [:development, :test]
 
+# cloudinary to image upload
+gem "cloudinary"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
