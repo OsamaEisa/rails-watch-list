@@ -1,3 +1,4 @@
+<%= link_to "Back to all lists", lists_path, class: "btn btn-secondary mt-3" %>
 <h3 class='text-center m-3'>List details</h3>
 <div class="card">
   <div class="card-body">
@@ -7,7 +8,7 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci iusto debitis
     </p>
       <div class="card mb-3">
         <div class="card-body">
-        <h5 class="card-title">List Bookmarks</h5>
+        <h5 class="card-title">Bookmarks List</h5>
         <ul>
         <% @list.bookmarks.each do |bookmark| %>
           <li><%= bookmark.movie.title %> -- <%= bookmark.comment %> -- <%= link_to "Delete", bookmark_path(bookmark), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "link-danger mt-2" %></li>
@@ -18,4 +19,12 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci iusto debitis
   </div>
 </div>
 
-<%= link_to "Back to all lists", lists_path, class: "btn btn-secondary mt-3" %>
+<h3 class='text-center mt-2'>Create a new bookmark</h3>
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment, label: "Comment", placeholder: 'Enter a comment about the movie' %>
+  <%= f.association :movie %>
+  <%= f.submit "Save", class: "btn btn-primary" %>
+<% end %>
+
+<hr>
